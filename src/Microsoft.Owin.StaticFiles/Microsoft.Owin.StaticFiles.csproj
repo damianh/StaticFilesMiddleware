@@ -55,6 +55,10 @@
     <Compile Include="DirectoryFormatters\IDirectoryFormatter.cs" />
     <Compile Include="DefaultFilesOptions.cs" />
     <Compile Include="DirectoryBrowserOptions.cs" />
+    <Compile Include="FileSystems\EmbeddedResourceFileSystem.cs" />
+    <Compile Include="FileSystems\IFileInfo.cs" />
+    <Compile Include="FileSystems\IFileSystem.cs" />
+    <Compile Include="FileSystems\PhysicalFileSystem.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Infrastructure\RangeHelpers.cs" />
     <Compile Include="Infrastructure\SharedOptions.cs" />
@@ -89,12 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="CustomDictionary.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Owin.FileSystems\Microsoft.Owin.FileSystems.csproj">
-      <Project>{63988A9B-FA70-4BBA-8C7E-784145384F7C}</Project>
-      <Name>Microsoft.Owin.FileSystems</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">

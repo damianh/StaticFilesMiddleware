@@ -76,6 +76,8 @@
   <ItemGroup>
     <Compile Include="DefaultFilesMiddlewareTests.cs" />
     <Compile Include="DirectoryBrowserMiddlewareTests.cs" />
+    <Compile Include="FileSystems\EmbeddedResourceFileSystemTests.cs" />
+    <Compile Include="FileSystems\PhysicalFileSystemTests.cs" />
     <Compile Include="RangeHeaderTests.cs" />
     <Compile Include="CacheHeaderTests.cs" />
     <Compile Include="SendFileResponseExtensionsTests.cs" />
@@ -91,10 +93,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Microsoft.Owin.FileSystems\Microsoft.Owin.FileSystems.csproj">
-      <Project>{63988a9b-fa70-4bba-8c7e-784145384f7c}</Project>
-      <Name>Microsoft.Owin.FileSystems</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Microsoft.Owin.StaticFiles\Microsoft.Owin.StaticFiles.csproj">
       <Project>{f31a42db-2f57-4dac-b2bc-106f2d6f3c82}</Project>
       <Name>Microsoft.Owin.StaticFiles</Name>
@@ -106,6 +104,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="File.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\File.txt" />
+    <EmbeddedResource Include="Resources\ResourcesInSubdirectory\File3.txt" />
+    <Content Include="sub\File2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SubFolder\Default.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

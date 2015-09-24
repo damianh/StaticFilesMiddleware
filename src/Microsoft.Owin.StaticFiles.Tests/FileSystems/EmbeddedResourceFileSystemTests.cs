@@ -13,7 +13,7 @@ namespace Microsoft.Owin.FileSystems.Tests
         [Fact]
         public void When_TryGetFileInfo_and_resource_does_not_exist_then_should_not_get_file_info()
         {
-            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.FileSystems.Tests.Resources");
+            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.StaticFiles.Tests.Resources");
 
             IFileInfo fileInfo;
             provider.TryGetFileInfo("/DoesNotExist.Txt", out fileInfo).ShouldBe(false);
@@ -24,7 +24,7 @@ namespace Microsoft.Owin.FileSystems.Tests
         [Fact]
         public void When_TryGetFileInfo_and_resource_exists_in_root_then_should_get_file_info()
         {
-            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.FileSystems.Tests.Resources");
+            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.StaticFiles.Tests.Resources");
 
             IFileInfo fileInfo;
             provider.TryGetFileInfo("/File.txt", out fileInfo).ShouldBe(true);
@@ -40,7 +40,7 @@ namespace Microsoft.Owin.FileSystems.Tests
         [Fact]
         public void When_TryGetFileInfo_and_resource_exists_in_subdirectory_then_should_get_file_info()
         {
-            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.FileSystems.Tests.Resources");
+            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.StaticFiles.Tests.Resources");
 
             IFileInfo fileInfo;
             provider.TryGetFileInfo("/ResourcesInSubdirectory/File3.txt", out fileInfo).ShouldBe(true);
@@ -56,7 +56,7 @@ namespace Microsoft.Owin.FileSystems.Tests
         [Fact]
         public void When_TryGetFileInfo_and_resources_in_path_then_should_get_file_infos()
         {
-            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.FileSystems.Tests");
+            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.StaticFiles.Tests");
 
             IFileInfo fileInfo;
             provider.TryGetFileInfo("/Resources.File.txt", out fileInfo).ShouldBe(true);
@@ -72,7 +72,7 @@ namespace Microsoft.Owin.FileSystems.Tests
         [Fact]
         public void TryGetDirInfo_with_slash()
         {
-            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.FileSystems.Tests.Resources");
+            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.StaticFiles.Tests.Resources");
 
             IEnumerable<IFileInfo> files;
             provider.TryGetDirectoryContents("/", out files).ShouldBe(true);
@@ -87,7 +87,7 @@ namespace Microsoft.Owin.FileSystems.Tests
         [Fact]
         public void TryGetDirInfo_without_slash()
         {
-            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.FileSystems.Tests.Resources");
+            var provider = new EmbeddedResourceFileSystem("Microsoft.Owin.StaticFiles.Tests.Resources");
 
             IEnumerable<IFileInfo> files;
             provider.TryGetDirectoryContents(string.Empty, out files).ShouldBe(false);
