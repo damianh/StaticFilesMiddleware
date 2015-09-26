@@ -21,10 +21,10 @@ namespace Microsoft.Owin.StaticFiles.Tests
         }
 
         [Fact]
-        public void SendFileWhenNotSupported()
+        public async Task SendFileWhenNotSupported()
         {
             IOwinResponse response = new OwinResponse();
-            Assert.Throws<NotSupportedException>(() => response.SendFileAsync("foo"));
+            await Assert.ThrowsAsync<NotSupportedException>(() => response.SendFileAsync("foo"));
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Microsoft.Owin.StaticFiles.Tests
             string name = null;
             long offset = 0;
             long? length = null;
-            CancellationToken token;
+            CancellationToken token = CancellationToken.None;
             Func<string, long, long?, CancellationToken, Task> func = (n, o, l, c) =>
                 {
                     name = n;
