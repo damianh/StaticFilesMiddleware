@@ -23,17 +23,6 @@ namespace Owin
         }
 
         /// <summary>
-        /// Enable all static file middleware on for the current request path in the current directory.
-        /// </summary>
-        /// <param name="builder"></param>
-        /// <param name="enableDirectoryBrowsing">Should directory browsing be enabled?</param>
-        /// <returns></returns>
-        public static IAppBuilder UseFileServer(this IAppBuilder builder, bool enableDirectoryBrowsing)
-        {
-            return UseFileServer(builder, new FileServerOptions() { EnableDirectoryBrowsing = enableDirectoryBrowsing });
-        }
-
-        /// <summary>
         /// Enables all static file middleware (except directory browsing) for the given request path from the directory of the same name
         /// </summary>
         /// <param name="builder"></param>
@@ -60,11 +49,6 @@ namespace Owin
             if (options.EnableDefaultFiles)
             {
                 builder = builder.UseDefaultFiles(options.DefaultFilesOptions);
-            }
-
-            if (options.EnableDirectoryBrowsing)
-            {
-                builder = builder.UseDirectoryBrowser(options.DirectoryBrowserOptions);
             }
 
             return builder

@@ -78,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefaultFilesMiddlewareTests.cs" />
-    <Compile Include="DirectoryBrowserMiddlewareTests.cs" />
     <Compile Include="FileSystems\EmbeddedResourceFileSystemTests.cs" />
     <Compile Include="FileSystems\PhysicalFileSystemTests.cs" />
     <Compile Include="RangeHeaderTests.cs" />

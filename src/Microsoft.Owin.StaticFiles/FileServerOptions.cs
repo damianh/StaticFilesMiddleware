@@ -1,8 +1,5 @@
 // Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
 
-using System.Collections.Generic;
-using Microsoft.Owin.StaticFiles.ContentTypes;
-using Microsoft.Owin.StaticFiles.DirectoryFormatters;
 using Microsoft.Owin.StaticFiles.Infrastructure;
 
 namespace Microsoft.Owin.StaticFiles
@@ -19,7 +16,6 @@ namespace Microsoft.Owin.StaticFiles
             : base(new SharedOptions())
         {
             StaticFileOptions = new StaticFileOptions(SharedOptions);
-            DirectoryBrowserOptions = new DirectoryBrowserOptions(SharedOptions);
             DefaultFilesOptions = new DefaultFilesOptions(SharedOptions);
             EnableDefaultFiles = true;
         }
@@ -30,19 +26,9 @@ namespace Microsoft.Owin.StaticFiles
         public StaticFileOptions StaticFileOptions { get; private set; }
 
         /// <summary>
-        /// Options for configuring the DirectoryBrowserMiddleware.
-        /// </summary>
-        public DirectoryBrowserOptions DirectoryBrowserOptions { get; private set; }
-
-        /// <summary>
         /// Options for configuring the DefaultFilesMiddleware.
         /// </summary>
         public DefaultFilesOptions DefaultFilesOptions { get; private set; }
-
-        /// <summary>
-        /// Directory browsing is disabled by default.
-        /// </summary>
-        public bool EnableDirectoryBrowsing { get; set; }
 
         /// <summary>
         /// Default files are enabled by default.
