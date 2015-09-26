@@ -53,10 +53,10 @@ namespace Microsoft.Owin.StaticFiles.Tests
         }
 
         [Theory]
-        [InlineData("", @".", "/xunit.xml")]
-        [InlineData("", @".", "/Xunit.Xml")]
-        [InlineData("/somedir", @".", "/somedir/xunit.xml")]
-        [InlineData("/SomeDir", @".", "/soMediR/xunit.XmL")]
+        [InlineData("", @".", "/xunit.core.xml")]
+        [InlineData("", @".", "/Xunit.core.Xml")]
+        [InlineData("/somedir", @".", "/somedir/xunit.core.xml")]
+        [InlineData("/SomeDir", @".", "/soMediR/xunit.core.XmL")]
         [InlineData("", @"SubFolder", "/extra.xml")]
         [InlineData("/somedir", @"SubFolder", "/somedir/extra.xml")]
         public async Task FoundFile_Served(string baseUrl, string baseDir, string requestUrl)
@@ -93,10 +93,10 @@ namespace Microsoft.Owin.StaticFiles.Tests
         }
 
         [Theory]
-        [InlineData("", @".", "/xunit.xml")]
-        [InlineData("", @".", "/Xunit.Xml")]
-        [InlineData("/somedir", @".", "/somedir/xunit.xml")]
-        [InlineData("/SomeDir", @".", "/soMediR/xunit.XmL")]
+        [InlineData("", @".", "/xunit.core.xml")]
+        [InlineData("", @".", "/Xunit.Core.Xml")]
+        [InlineData("/somedir", @".", "/somedir/xunit.core.xml")]
+        [InlineData("/SomeDir", @".", "/soMediR/xunit.core.XmL")]
         [InlineData("", @"SubFolder", "/extra.xml")]
         [InlineData("/somedir", @"SubFolder", "/somedir/extra.xml")]
         public async Task HeadFile_HeadersButNotBodyServed(string baseUrl, string baseDir, string requestUrl)
